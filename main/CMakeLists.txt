@@ -42,7 +42,7 @@ set(SOURCES "audio/audio_codec.cc"
 set(INCLUDE_DIRS "." "display" "display/lvgl_display" "display/lvgl_display/jpg" "audio" "audio/demuxer" "protocols")
 
 # REQUIRES - explicitly list components needed
-set(REQUIRES esp_http_client)
+set(COMPONENT_REQUIRES esp_http_client)
 
 # Add board common files
 list(APPEND SOURCES
