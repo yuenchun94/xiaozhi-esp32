@@ -63,11 +63,6 @@ list(APPEND SOURCES
 )
 list(APPEND INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/boards/common)
 
-# Register main component with explicit REQUIRES
-idf_component_register(SRCS ${SOURCES}
-                       INCLUDE_DIRS ${INCLUDE_DIRS}
-                       REQUIRES esp_http_client)
-
 
 idf_build_get_property(build_components BUILD_COMPONENTS)
 # Function to find component dynamically by pattern
@@ -987,6 +982,7 @@ idf_component_register(SRCS ${SOURCES}
                         efuse
                         bt
                         fatfs
+                        esp_http_client
                         ${MAIN_PRIV_REQUIRES_EXTRA}
                     )
 
