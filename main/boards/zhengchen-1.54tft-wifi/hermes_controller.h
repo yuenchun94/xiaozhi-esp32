@@ -52,7 +52,7 @@ public:
     HermesController() {
         // Load bridge URL from NVS
         Settings settings("hermes", true);
-        bridge_url_ = settings.GetString("url", "http://192.168.0.195:4567");
+        bridge_url_ = settings.GetString("url", "http://192.168.0.138:4567");
         
         auto& mcp_server = McpServer::GetInstance();
         
