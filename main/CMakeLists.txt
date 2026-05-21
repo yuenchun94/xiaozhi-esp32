@@ -41,9 +41,6 @@ set(SOURCES "audio/audio_codec.cc"
 
 set(INCLUDE_DIRS "." "display" "display/lvgl_display" "display/lvgl_display/jpg" "audio" "audio/demuxer" "protocols")
 
-# REQUIRES - explicitly list components needed
-set(COMPONENT_REQUIRES esp_http_client)
-
 # Add board common files
 list(APPEND SOURCES
     "boards/common/board.cc"
@@ -65,6 +62,11 @@ list(APPEND SOURCES
     "boards/common/system_reset.cc"
 )
 list(APPEND INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/boards/common)
+
+# Register main component with explicit REQUIRES
+idf_component_register(SRCS ${SOURCES}
+                       INCLUDE_DIRS ${INCLUDE_DIRS}
+                       REQUIRES esp_http_client)
 
 
 idf_build_get_property(build_components BUILD_COMPONENTS)
