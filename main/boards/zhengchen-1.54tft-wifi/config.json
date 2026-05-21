@@ -3,7 +3,11 @@
     "builds": [
         {
             "name": "zhengchen-1.54tft-wifi",
-            "sdkconfig_append": []
+            "sdkconfig_append": [
+                "CONFIG_ESP_HTTP_CLIENT_ENABLE_HTTPS=n",
+                "CONFIG_ESP_TLS_USED=n",
+                "CONFIG_LWIP_TCP_KEEP_CONNECTION_WHEN_IP_CHANGES=n"
+            ]
         }
     ]
 }

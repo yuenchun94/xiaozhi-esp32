@@ -9,6 +9,8 @@
 #include "led/single_led.h"
 #include "assets/lang_config.h"
 #include "power_manager.h"
+#include "ha_controller.h"
+#include "hermes_controller.h"
 
 #include <esp_log.h>
 #include <esp_lcd_panel_vendor.h>
@@ -166,6 +168,13 @@ private:
     }
 
     void InitializeTools() {
+        // Initialize HA Controller for Home Assistant integration
+        static HaController ha_controller;
+        
+        // Initialize Hermes Controller for Hermes AI agent integration
+        static HermesController hermes_controller;
+        
+        ESP_LOGI(TAG, "HA and Hermes MCP tools initialized");
     }
 
 public:
